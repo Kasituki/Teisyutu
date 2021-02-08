@@ -1,0 +1,70 @@
+.link{
+    display: inline-block;
+
+
+}
+.root{
+    display: inline-block;
+}
+.accordion-button{
+    padding: 0px;
+}
+.conTitle{
+    background: linear-gradient(-225deg, #2CD8D5 0%, #c1fffc 56%, #bafffc 100%);
+    width: 140px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 2px 3px #808080;
+    font-size: 1.3em;
+}
+.infobtn{
+    background: linear-gradient(-20deg, #a7e6e2 20%, #82d0e4 80%);
+    box-shadow: 4px 4px #808080;
+    border-radius: 5px;
+    margin: 5px 5px 15px 5px;
+    text-align: center;
+    color: white;
+}
+.infobtn:hover{
+    transform: translate3d(4px, 4px);
+    color:white;
+    box-shadow: none;
+    background: linear-gradient(-20deg, #58d5cf 0%, #24afd2 100%);
+}
+
+/* .tab-area {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    cursor: pointer;
+    margin-top:10px ;
+}
+    .tab {
+      width: 300px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: white;
+      border: 1px solid #fafcff;
+      text-shadow: 1px 2px 3px #808080;
+      background-color: #c3eaecfb;
+
+    }
+    .tab.active {
+      background-color: #ccc;
+      color: #222e3e;
+      border: none;
+    }
+  .content-area {
+    font-size: 30px;
+    text-align: center;
+  }
+    .content {
+      display: none;
+    }
+    .content.show {
+      margin-top: 50px;
+      display: block;
+    }
+ */

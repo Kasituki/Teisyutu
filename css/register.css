@@ -1,0 +1,113 @@
+.url{
+    /* margin: 0px 0px 15px 0px; */
+    text-align: center;
+    font-size: 1.1em;
+    width: 90%;
+    /* height: 40px; */
+    display: block;
+    box-sizing: border-box;
+    float: right;
+
+}
+.area{
+   
+    width: 60%;
+    /* height:60px; */
+    margin: 10px auto;
+    font-size: 20px;
+
+}
+
+.textarea{
+    box-sizing: border-box
+}
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.contents{
+width: 10%;
+float: left;
+display: block;
+}
+.text{
+width: 80%;
+}
+.input{
+    width: 80%;
+}
+
+/*この辺の書き方は覚えておこう*/
+input[type=radio] {
+    display: none; /* ラジオボタンを非表示にする */
+}
+.label{
+    display: block; /* ブロックレベル要素化する */
+    float: left; /* 要素の左寄せ・回り込を指定する */
+    margin: 5px; /* ボックス外側の余白を指定する */
+    width: 100px; /* ボックスの横幅を指定する */
+    height: 45px; /* ボックスの高さを指定する */
+    padding-left: 5px; /* ボックス内左側の余白を指定する */
+    padding-right: 5px; /* ボックス内御右側の余白を指定する */
+    color: #b20000; /* フォントの色を指定 */
+    text-align: center; /* テキストのセンタリングを指定する */
+    line-height: 45px; /* 行の高さを指定する */
+    cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+    border: 2px solid #006DD9;/* ボックスの境界線を実線で指定する */
+    border-radius: 5px; /* 角丸を指定する */
+
+}
+input[type=radio]:checked + label {
+    background: #31A9EE;/* マウス選択時の背景色を指定する */
+    color: #ffffff; /* マウス選択時のフォント色を指定する */
+ }
+ .label:hover {
+    background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
+}
+.save {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: #fff;
+    border-style: none;
+     box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow: 2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+     text-shadow: 1px 1px 2px #000;
+    background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
+    background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.save:hover {
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+}
+.move{
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-style: none;
+     box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow: 2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+     text-shadow: 1px 1px 2px #000;
+    background: -moz-linear-gradient(bottom, rgb(51, 221, 207), rgb(34, 124, 136) 50%, rgb(51, 196, 221));
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(51, 210, 221)), color-stop(0.5, rgb(34, 133, 136)), to(rgb(51, 221, 207)));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: block;
+    width: 100px;
+
+
+}
+.move_a{
+    color: #fff;
+}
+.move:hover {
+    box-shadow: none;
+    transform: translate3d(0, 6px, 0);
+}

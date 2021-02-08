@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>登録</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='../css/top.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='../css/register.css'>
+        <script src="../js/jquery-3.5.1.min.js"></script>
+        <script src='../js/register.js'></script>
+
+        <script src='main.js'></script>
+    </head>
+    <body>
+        <input id="count" value="0" style="display: none;">
+
+    <h1 class="title">登録したい内容を入力してください</h1>
+        <section class="area">
+            <table>
+                <tr>
+                    <td>パス・URL</td>
+                    <td class="input"><input id="root" placeholder="パスかURLを入力してください" class="text"></td>
+                </tr>
+                <tr>
+                    <td>名前</td>
+                    <td class="input"><input id="name" placeholder="名前を入力してください" class="text"></td>
+                </tr>
+                <tr>
+                    <td>作成日</td>
+                    <td id="date" class="input text" >年月日</td>
+                </tr>
+                <tr>
+                    <td>メモ</td>
+                    <td class="input"><textarea id="memo" class="memo" rows="2" cols="40"></textarea></td>
+                </tr>
+                <tr>
+                    <td>種類</td>
+                    <td class="type">
+                        <input type="radio" name="type" value="パス" id="path">
+                        <label for="path" class="label">パス</label>
+                        <input type="radio" name="type" value="URL" id="url">
+                        <label for="url" class="label">URL</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="save" value="保存" onclick="save()"></td>
+                    <td  class="move"><a class="move_a" href="check.html">確認する</a></td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>
