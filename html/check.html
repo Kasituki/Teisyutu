@@ -19,13 +19,13 @@
     
     <h1 class="title">今までに登録したもの</h1>
      <div class="tab-area">
-      <div class="tab active">
+      <div id="list" class="tab active">
         一覧
       </div>
        <div id="check" class="tab">
         詳細
       </div>
-      <div class="tab">
+      <div id="remake" class="tab">
         編集
       </div>
     </div> 
@@ -41,42 +41,70 @@
         <div>
           <section class="area">
             <table>
-                <tr>
-                    <td>パス・URL</td>
-                    <td class="input"></td>
+                <tr class="mb10">
+                    <td class="tdtitle">パス・URL</td>
+                    <td id="pathUrl"></td>
                 </tr>
-                <tr>
-                    <td>名前</td>
-                    <td class="input"><input id="name" placeholder="名前を入力してください" class="text"></td>
+                <tr class="mb10">
+                    <td class="tdtitle">名前</td>
+                    <td id="name"></td>
                 </tr>
-                <tr>
-                    <td>作成日</td>
-                    <td id="date" class="input text" >年月日</td>
+                <tr class="mb10">
+                    <td class="tdtitle">作成日</td>
+                    <td id="date">年月日</td>
                 </tr>
-                <tr>
-                    <td>メモ</td>
-                    <td class="input"><textarea id="memo" class="memo" rows="2" cols="40"></textarea></td>
+                <tr class="mb10">
+                    <td class="tdtitle">メモ</td>
+                    <td id="memo"></td>
                 </tr>
-                <tr>
-                    <td>種類</td>
-                    <td class="type">
-                        <input type="radio" name="type" value="パス" id="path">
-                        <label for="path" class="label">パス</label>
-                        <input type="radio" name="type" value="URL" id="url">
-                        <label for="url" class="label">URL</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>修正する</td>
-                    <td>一覧に戻る</td>
+                <tr class="mb10">
+                    <td class="tdtitle">種類</td>
+                    <td id="type"></td>
                 </tr>
             </table>
         </section>
+          <div class="remake btn tab">編集する</div>
+          <div class="back btn tab">一覧に戻る</div>
         </div>
       </div>
         <div id="panel3" class="content">
-          <p>panel3</p>
-        </div>
+          <div>
+          <section>
+            <input id="listnum" value="" type="hidden">
+          <table align="center">
+            <tr>
+                <td>パス・URL</td>
+                <td class="input"><input id="root_remake" class="text"></td>
+            </tr>
+            <tr>
+                <td>名前</td>
+                <td class="input"><input id="name_remake" class="text"></td>
+            </tr>
+            <tr>
+                <td>作成日</td>
+                <td id="date_remake" class="input text" >年月日</td>
+            </tr>
+            <tr>
+                <td>メモ</td>
+                <td class="input"><textarea id="memo_remake" class="memo" rows="2" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td>種類</td>
+                <td class="type">
+                    <input type="radio" name="type" value="パス" id="path_remake">
+                    <label for="path_remake" class="label">パス</label>
+                    <input type="radio" name="type" value="URL" id="url_remake">
+                    <label for="url_remake" class="label">URL</label>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" class="save" value="変更する" onclick="remakeInfo()"></td>
+                <td><div class="back btn tab">一覧に戻る</div></td>
+            </tr>
+        </table>
+      </section>
+    </div>
+      </div>
       <!-- <div class="panel_area">
         <div id="panel1" class="tab_panel">
           <section class="area">
@@ -92,8 +120,7 @@
           <p>panel3</p>
         </div>
       </div> -->
-
-      <div><a href="register.html">登録する</a></div>
+      <div class="mt10 register"><a href="register.html">登録画面へ</a></div>
 
     </div>
 

@@ -3,7 +3,7 @@ window.onload = function() {
     var year =	today.getFullYear();	    	
     var month = today.getMonth() +1;
     var day = today.getDate();
-    //  localStorage.clear();
+    //   localStorage.clear();
     
     let element = document.getElementById('date');
 

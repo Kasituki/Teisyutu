@@ -72,3 +72,42 @@
 #panel2 div .area table{
      text-align: start;
 }
+.btn{
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 15px;
+    color: #fff;
+    border-style: none;
+     box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow: 2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+     text-shadow: 1px 1px 2px #000;
+    background: -moz-linear-gradient(bottom, #36d, #248 50%, #36d);
+    background: -webkit-gradient(linear, left bottom, left top, from(#36d), color-stop(0.5, #248), to(#36d));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.btn:hover {
+    box-shadow: none;
+    transform: translate3d(0, 3px, 0);
+    color: white;
+}
+.tdtitle{
+    background-color: rgba(155, 209, 253, 0.842);
+    width: 80px;
+    text-shadow: 1px 1px 2px #000;
+color: white;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.remake{
+    background: -moz-linear-gradient(bottom, rgb(51, 221, 207), rgb(34, 124, 136) 50%, rgb(51, 196, 221));
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(51, 210, 221)), color-stop(0.5, rgb(34, 133, 136)), to(rgb(51, 221, 207)));
+}
+.mt10{
+    margin-top: 10px;
+}
