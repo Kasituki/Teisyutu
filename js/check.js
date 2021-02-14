@@ -62,8 +62,9 @@ window.onload = function() {
 
         var newTxt = document.createTextNode( "詳細を見る" );
         var content = document.createElement("div");
-        content.setAttribute('class','infobtn');
-        content.setAttribute('class','tab');
+        content.setAttribute('class','infobtn tab');
+        content.setAttribute('id','item' + i);
+        // content.setAttribute('class','tab');
 
         content.setAttribute('onclick','infochc()');
         content.appendChild( newTxt );
@@ -141,8 +142,65 @@ $(function() {
     let tabs = $(".tab"); // tabのクラスを全て取得し、変数tabsに配列で定義
     $(".tab").on("click", function() { // tabをクリックしたらイベント発火
       $(".active").removeClass("active"); // activeクラスを消す
+      console.log($(this));
+      console.log(this);
+      var val = $(this).attr('class');
+      console.log(val);
+      console.log("infobtn tab"== val);
+      /*詳細へボタンを押した際 */
+      if("infobtn tab"== val){
+        var check = document.getElementById('check');
+        console.log(check);
+        $(check).addClass("active"); // 詳細タブにactiveクラスを追加
+        $(".content").removeClass("show");
+        var next = "";
+        next = document.getElementById('panel2');
+        console.log(next);
+        $('#panel2').addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
+
+        var num = "";
+        num = $(this).attr('id');
+        console.log(num);
+        // data = JSON.parse(localStorage.getItem(i));
+        // console.log(data);
+
+        // var target = document.getElementById("link");
+        // var newTag = target.insertRow();
+    
+        // var title = newTag.insertCell();
+        // var titleTxt = document.createTextNode(i);
+        // title.appendChild(titleTxt);
+        // title.setAttribute('class','conTitle');
+        // title.setAttribute('rowspan',2);
+        // newTag.appendChild(title);
+
+
+
+        // var cell = newTag.insertCell();
+        // cell.innerHTML =data.Root;
+        // newTag.appendChild(cell);
+    
+        // var newTag2 = target.insertRow();
+        // var cell2 = newTag2.insertCell();
+        // cell2.innerHTML =data.Name;
+        // newTag2.appendChild(cell2);
+
+        // var newTag3 = target.insertRow();
+        // var cell3 = newTag3.insertCell();
+
+        // var newTxt = document.createTextNode( "詳細を見る" );
+        // var content = document.createElement("div");
+        // content.setAttribute('class','infobtn tab');
+        // // content.setAttribute('class','tab');
+
+        // content.setAttribute('onclick','infochc()');
+        // content.appendChild( newTxt );
+        // cell3.appendChild(content);
+
+
+      }
       $(this).addClass("active"); // クリックした箇所にactiveクラスを追加
-      const index = tabs.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
-      $(".content").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
+
+      // $(".content").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
     })
   })
