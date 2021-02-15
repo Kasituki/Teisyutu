@@ -3,7 +3,7 @@ window.onload = function() {
     var year =	today.getFullYear();	    	
     var month = today.getMonth() +1;
     var day = today.getDate();
-    //   localStorage.clear();
+    // localStorage.clear();
     
     let element = document.getElementById('date');
 
@@ -11,26 +11,27 @@ window.onload = function() {
 
     var last=0;
 
-    let key = [];
-    for(let i=1; i<=localStorage.length; i++) {
-        key = JSON.parse(localStorage.getItem(i));
-        last++
-        console.log(key.Root);
+    let icon = [];
+    let key = '0';
+    for(let i=0; i<localStorage.length; i++) {
+         key = localStorage.key(i);
+        console.log('i:'+i);
+        console.log('key:'+key);
+        console.log('localStorage.length:'+localStorage.length);
+      last=last++;
+        icon = JSON.parse(localStorage.getItem(key));
+        console.log(icon.Root);
       }
-      document.getElementById('count').value = last;
-      console.log(document.getElementById('count').value);
 };
 
 function save(){
-    var last=0;
-    last = Number(document.getElementById('count').value);
+
 
     var root = null;
     var name = null;
     var date = null;
     var memo = null;
     var type = null;
-    last = last + 1;
 
      root = document.getElementById('root').value;
      name = document.getElementById('name').value;
@@ -46,16 +47,34 @@ function save(){
         Memo : memo,
         Type : type
     } ;
-console.log(input);
-     last=last++;
-     var key = last;
-    localStorage.setItem(key,JSON.stringify(input));
+    console.log(input);
+    var last='0';
+
+    /**localstrageの中にどれだけ入ってるかをチェック */
+    last = localStorage.length;
+
+    console.log('last:' +last);
+    var setKey = '';
+    setKey =localStorage.length;
+    console.log(setKey);
+
+
+    // setKey = localStorage.key(last);
+    console.log('setKey:'+setKey);
+    console.log('length:' + localStorage.length);
+
+    localStorage.setItem(setKey,JSON.stringify(input));
     document.getElementById('root').value = "";
     document.getElementById('name').value = "";
     document.getElementById('memo').value = "";
     $('input[name="type"]:checked').prop('checked', false);
-    document.getElementById('count').value = last;
+    var count = document.getElementById('count').value;
+
+
+    count = localStorage.length;
+    console.log('count:'+count);
     alert('登録されました');
+
     }else{
         if(root == null){
             alert('パスかURLが入力されていません');

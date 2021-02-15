@@ -1,46 +1,20 @@
 window.onload = function() {
-    // var target = document.getElementById("link");
-    // var newTag = target.insertRow();
-
-    // var cell = newTag.insertCell();
-    // cell.innerHTML ="試しに入れてみた1";
-    // newTag.appendChild(cell);
-    // cell.classList.add('red');
-
-    // var cell2 = newTag.insertCell();
-    // cell2.innerHTML ="試しに入れてみた2";
-    // newTag.appendChild(cell2);
-
-    // var newTag2 = target.insertRow();
-    // var cell3 = newTag2.insertCell();
-    // cell3.innerHTML ="試しに入れてみた3";
-    // newTag2.appendChild(cell3);
-    
-    // var target = document.getElementById("link");
-    // var newTag = target.insertRow();
-
-    // var cell = newTag.insertCell();
-    // var newAnchor = document.createElement("a");
-    // var newTxt = document.createTextNode( "詳細を見る" );
-    // newAnchor.appendChild( newTxt );
-    // newAnchor.setAttribute("href","information.html"  );
-    // cell.appendChild(newAnchor);
-    // newTag.appendChild(cell);
-    // cell.classList.add('information');
-    // localStorage.clear();
+ 
     let data = [];
-    for(let i = 1 ; i <= localStorage.length ; i++) {
+    for(let i = 0 ; i < localStorage.length ; i++) {
 
-        // let key = localStorage.key(i);
-        // console.log(localStorage.key(i));
-        data = JSON.parse(localStorage.getItem(i));
+        let key = localStorage.key(i);
+        console.log('i:'+ i);
+        console.log('key:'+key);
+
+        data = JSON.parse(localStorage.getItem(key));
         console.log(data);
 
         var target = document.getElementById("link");
         var newTag = target.insertRow();
     
         var title = newTag.insertCell();
-        var titleTxt = document.createTextNode(i);
+        var titleTxt = document.createTextNode(i + 1);
         title.appendChild(titleTxt);
         title.setAttribute('class','conTitle');
         title.setAttribute('rowspan',2);
@@ -63,72 +37,13 @@ window.onload = function() {
         var newTxt = document.createTextNode( "詳細を見る" );
         var content = document.createElement("div");
         content.setAttribute('class','infobtn tab');
-        content.setAttribute('id','item' + i);
+        content.setAttribute('id',key);
         // content.setAttribute('class','tab');
 
         content.setAttribute('onclick','infochc()');
         content.appendChild( newTxt );
         cell3.appendChild(content);
 
-        //アコーディオンの外側づくり
-        // var newAnchor = document.createElement("div");
-        // // var newTxt = document.createTextNode( "詳細を見る" );
-        // newAnchor.classList.add('accordion');
-        // newAnchor.setAttribute('class','accordion');
-        // cell3.appendChild(newAnchor);
-        // // newTag3.appendChild(cell3);
-        // // newAnchor.appendChild( newTxt );
-        // //アコーディオンメニューの中身
-        // var content = document.createElement("div");
-        // content.setAttribute('class','accordion-item');
-        // newAnchor.appendChild(content);
-
-
-        // var h2 = document.createElement("h2");
-        // h2.setAttribute('class','accordion-header');
-        // h2.setAttribute('id','headingOne');
-        // content.appendChild(h2);
-
-        // var button = document.createElement("button");
-        // button.setAttribute('class','accordion-button');
-        // button.setAttribute('type','button');
-        // button.setAttribute('data-bs-toggle','collapse' + i);
-        // button.setAttribute('data-bs-target','#collapseOne' + i);
-        // button.setAttribute('aria-expanded','false');
-        // button.setAttribute('aria-controls','collapseOne' + i);
-
-        // h2.appendChild(button)
-        // var newTxt = document.createTextNode( "詳細を見る" );
-        // button.appendChild( newTxt );
-
-        // var content_in = document.createElement("div");
-        // content_in.setAttribute('id','collapseOne' + i);
-        // content_in.setAttribute('class','accordion-collapse' + i);
-        // content_in.setAttribute('class','collapse' + i);
-        //  content_in.setAttribute('class','show');
-        // content_in.setAttribute('aria-labelledby','headingOne');
-        // content_in.setAttribute('data-bs-parent','#accordionInfo' + i);
-        // content.appendChild( content_in );
-
-        // var dl = document.createElement("dl");
-        // content_in.appendChild(dl);
-
-        // var dd1 = document.createElement("dd");
-        // var newTxt1 = document.createTextNode( "日付：" + data.Date );
-        // dd1.appendChild(newTxt1);
-        // dl.appendChild(dd1);
-
-        // var dd2 = document.createElement("dd");
-        // var newTxt2 = document.createTextNode( "メモ：" + data.Memo );
-        // dd2.appendChild(newTxt2);
-        // dl.appendChild(dd2);
-        // var dd3 = document.createElement("dd");
-        // var newTxt3 = document.createTextNode( "種類：" + data.Type );
-        // dd3.appendChild(newTxt3);
-        // dl.appendChild(dd3);
-        // cell3.classList.add('information'+ i);
-        // cell3.setAttribute('value',i);
-        // newAnchor.setAttribute("href","information.html"  );
         
     }
     
@@ -141,6 +56,7 @@ $(function() {
 
       var val = $(this).attr('class');
 
+      console.log(val);
 
       /*詳細へボタンを押した際 */
       if("infobtn tab"== val){
@@ -153,9 +69,10 @@ $(function() {
 
         var num = "";
         num = $(this).attr('id');
-        var key = num.substr(4,1);
+        console.log(this);
+        // var key = num.substr(4,1);
 
-        var intkey = Number(key);
+        var intkey = Number(num);
         let tagdata = [];
         tagdata = JSON.parse(localStorage.getItem(intkey));
         let displayUrlPath = "";
@@ -232,6 +149,23 @@ $(function() {
           $('input[value='+ tagdata.Type +']').prop('checked', true);
 
         
+      }else if("delete btn tab" == val){
+        var result = confirm('本当に削除してもよろしいですか？');
+        console.log(val);
+        if(result){
+          var delTag = '';
+
+          delTag = document.getElementById('listnum').value;
+  
+          localStorage.removeItem(delTag);
+          location.reload()
+
+        }else{
+
+        }
+        
+
+
       }else{
         return false;
       }
